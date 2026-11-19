@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+
+    <title>Novatec! Tecnologia e Serviços</title>
+
+    <!-- Adicionando bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+    
+    
+    <style>
+        * {
+        box-sizing: border-box; /*evita que passe a borda*/
+        }
+
+        body {
+                margin: 0;
+                padding: 0;
+                background-image: url("fundo_2.jpg");
+                color: white;
+                background-size: cover; /*Faz a imagem ocupar toda a área disponível*/
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed; /*imagem ficar parada*/
+        }
+
+        /* Configuração do cabeçalho para ficar fixo no topo */
+        header {
+            background-color: black;
+            padding: 10px;
+            position: fixed; /*fixa o texto no topo*/
+            top: 0;  /*deixa o texto no topo da tela*/ 
+            left: 0; /*esquerda*/
+            width: 100%; /* faz o cabeçalho ocupar toda a largura*/
+            z-index: 1000; /* faz o cabeçalho ficar na frente de outros elementos*/
+        }
+
+
+        /*Elementos que foram colocados a direita do cabeçalho*/
+        .menu_direita {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                margin-left: auto;
+                margin-right: 20px;
+        }
+
+        /* Organizar os elementos lado a lado do cabeçalho */
+        .container-lado-a-lado {
+            display: flex; 
+            align-items: center;
+            gap: 40px;
+        }
+
+
+
+        /* Configuração da imagem da empresa*/
+        .imagem img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .imagem_propaganda img{
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Configuração do nome da empresa */
+        .texto-conteudo {
+            color: white;
+        }
+
+        
+
+        /* Login */
+        .log a {
+            color: white;
+            text-decoration: none; /* tirar o sublinhado do link*/
+        }
+
+        
+         /* Configuração do banner inicial do site */
+        .banner img {
+            padding-top: 60px;
+            display: block;
+            width: 1300px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* conteudo de importância*/
+        .caixa_texto {
+            margin: 20px;
+            padding: 50px;
+            border-radius : 10px; /* Borda arredondada*/
+            border: 1px solid blue; 
+            text-align: justify;
+
+        }
+
+        /*imagem que foi usada no texo*/
+        .imagem_conteudo{
+            padding: 30px;
+            align-items: center;
+        }
+
+        .conteudo_descricao_peça{
+            margin-left: 200px;
+            margin-right: 200px;
+            text-align: justify;
+            font-size: 24px;
+        }
+
+        
+        
+        .tabela {
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: left;
+        }
+
+
+
+        /*JavaScript e CSS para seta que mexe*/
+
+                /* Área principal / Agrupa todo o carrossel.*/
+        .carrossel {
+            background-color: black;
+            display: flex;
+            align-items: center;
+            gap: 15px; /* espaço entre a seta e os cards*/
+        }
+
+        /* Área visível / Define a área que mostra os cards e esconde os cards fora da área visível*/
+        .janela {
+            padding: 30px;
+            background-color: black;
+            width: 100%;
+            overflow: hidden; /*Ela esconde tudo que ultrapassar os limites da janela*/
+        }
+
+        /* Agrupa todos os cards em uma linha. */
+        .trilha {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        /* Configuração de cada card */
+        .trilha .card {
+            flex: 0 0 calc((100% - 60px) / 3);  /*os 0 do flex fazem com que não aumente e nem diminua o card automaticamente*/
+            height: 500px;
+            
+        }
+
+        /* Botão da seta */
+        .carrossel button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+
+        .trilha .card {
+            flex: 0 0 calc((100% - 60px) / 3);
+}
+
+       
+
+       
+
+            
+
+        
+
+        
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho / início da página -->
+    <header>
+
+        <div class="container-lado-a-lado">
+    
+            <div class="imagem">
+                <img src="logo.jpeg" alt="Logo da Novatec">
+            </div>
+    
+            <div class="texto-conteudo">
+                <h2>Novatec! Tecnologia e Serviços</h2>
+            </div>
+
+            <div class="menu_direita">
+    
+                
+                <div class="log">
+                    <a href="atendimento.html">Atendimento <br>ao cliente</a>
+                </div>
+                
+
+                <div class="log">
+                    <a href="file:///C:/Users/Aluno/Desktop/atividades%20wesley/projeto%20startup/site_ss.html">Inicio</a>
+                </div>
+        
+                <div class="log">
+                    <a style="margin-right: 50px;"
+                    href="login.html">Entre ou cadastre-se</a>
+                </div>
+
+            </div>
+    
+        </div>
+    
+    </header>
+    
+
+    
+    <main>
+        
+        <div class="banner">
+            <img src="pc2.jpg" alt="Banner de inicio">
+        </div>
+
+
+        
+        <div class="caixa_texto">
+            <h1 style="font-size: 35px;">Qual a importância de pesquisar cada peça na hora de montar um pc</h1>
+
+            <p style="font-size: 24px;">Pesquisar cada peça antes de montar um PC é muito importante porque não basta comprar 
+                componentes bons individualmente; eles precisam ser compatíveis entre si e atender
+                às suas necessidades.</p>
+            
+            <p style="font-size: 24px;">Um computador pode ter um processador potente, bastante memória RAM e uma placa de 
+            vídeo excelente, mas, se os componentes não forem escolhidos corretamente, você poderá
+            gastar mais do que deveria ou até ter problemas para montar e utilizar o computador.</p>
+                
+            <p style="font-size: 24px;">Veja os principais motivos:</p>
+
+            <h2 style="font-size: 35px;">Garantir a compatibilidade entre as peças</h2>
+
+            <p style="font-size: 24px;">Cada componente possui características e requisitos específicos. Por isso, é necessário
+            verificar se eles funcionam juntos.</p>
+            
+            <p style="font-size: 24px;">Por exemplo:</p>
+
+            <li style="margin-left: 40px; font-size: 24px;">Processador e placa-mãe: precisam ter o mesmo socket e compatibilidade com o chipset
+                 e a BIOS.
+            </li>
+
+            <li style="margin-left: 40px; font-size: 24px;">Memória RAM e placa-mãe: precisam ser compatíveis em geração (DDR4 ou DDR5), 
+                capacidade e frequências suportadas.
+            </li>
+
+            <li style="margin-left: 40px; font-size: 24px;">Placa de vídeo e placa-mãe: é importante verificar a conexão PCI Express e o
+                 espaço disponível no gabinete.
+            </li>
+
+            <li style="margin-left: 40px; font-size: 24px;">
+                Fonte e componentes: precisam ter potência suficiente e conectores adequados.
+            </li>
+
+            <li style="margin-left: 40px; font-size: 24px;">
+                Gabinete: deve comportar a placa-mãe, a placa de vídeo e o sistema de refrigeração.
+            </li>
+
+    
+            <div class="imagem_conteudo">
+                <img src="manutenção.jpg" alt="">
+            </div>
+
+            <h2 style="font-size: 24px;">
+                Evitar gargalos de desempenho
+            </h2>
+
+            <p style="font-size: 24px;">
+                O chamado gargalo acontece quando um componente limita o desempenho de outro.
+            </p>
+            
+            <p style="font-size: 24px;">
+                Por exemplo:
+            </p>
+
+            <li style="margin-left: 40px; font-size: 24px;">
+                Um processador muito básico pode limitar o desempenho de uma placa de vídeo potente em determinados jogos.
+            </li>
+
+            <li style="margin-left: 40px; font-size: 24px;">
+                Pouca memória RAM pode prejudicar a execução de vários programas simultaneamente.
+            </li>
+
+            <li style="margin-left: 40px; font-size: 24px;">
+                Um HD pode deixar a inicialização do sistema e a abertura de programas mais lentas quando comparado a um SSD.
+            </li>
+
+
+
+        </div>
+
+        <h1 style="text-align: center; margin-bottom: 60px; margin-top: 40px;">
+            Para que o Computador vai ser usado</h1>
+
+        
+        <div class="conteudo_descricao_peça">
+
+            <p>Cada computador deve ser montado de acordo com a necessidade do usuário.
+            Um PC para estudos, por exemplo, não exige o mesmo desempenho de um computador
+            para jogos ou para atividades profissionais que utilizam programas pesados.</p>
+
+            <p>
+                Para escolher as peças ideais, é importante considerar o desempenho,
+                a compatibilidade dos componentes, o consumo de energia, a possibilidade
+                de futuras atualizações e o orçamento disponível.
+            </p>
+
+            <h2>1. Computador para estudos</h2>
+
+            <p>
+                O computador para estudos é indicado para estudantes que utilizam
+                navegadores, editores de texto, apresentações, videoaulas, plataformas
+                educacionais e programas básicos.
+            </p>
+
+            <h3>
+                Processador(CPU):
+            </h3>
+
+            <p>
+                Um procesador Intel Core i3, i5 ou AMD Ryzen 3, de geração relativamente recente Já
+                são suficientes para executar tarefas mais simples:
+            </p>
+
+            <p>Clique na imagem para ver nossa sugestão:</p>
+
+            
+            <a href="https://www.kabum.com.br/produto/609426/processador-intel-sk1151-core-i5-7500-3-40ghz-oem-sem-cooler">
+                <img src="processador.jpg" alt="Processador" style="width: 700px; height: 500px;"></a>
+
+
+            <h3>Placa mãe:</h3>
+
+            <p>
+                Modelo deve ser compatível com o processador escolhido, com conexões USB e possibilidade
+                de expansão.
+            </p>
+
+
+            <a href="https://www.kabum.com.br/produto/396232/placa-mae-knup-intel-1151-h110-6-e-7-geracao-2xddr4-m-2-hdmi-e-vga-kp-h110">
+                <img src="placa mae.jpg" alt="Placa mãe" style="width: 700px; height: 500px;">
+            </a>
+
+            <h3>Memória RAM</h3>
+
+            <p>A memória deve ser compatível com o modelo na placa, veja qual a numeração da DDR, 8 GB como mínimo para uso básico;</p>
+
+
+    
+
+
+            <a href="https://www.kabum.com.br/produto/1064822/memoria-kingston-ddr4-8gb-3200mhz-pc4-25600-cl22-1-2v-288-pin-dimm-kvr32n22s8-8">
+                <img src="memoria ram.jpg" alt="Memoria RAM" style="width: 700px; height: 500px;">
+            </a>
+
+            <h3>Armazenamento</h3>
+
+            <p>
+                Para iniciar o sistema e abrir programas rapidamente o ideal é um SSD, também deve ser verificado se a placa mãe suporta,
+                veja o modelo de conexão(Sata por exemplo).
+            </p>
+
+
+            <a href="https://www.kabum.com.br/produto/105105/ssd-rise-mode-gamer-line-240gb-sata-iii-leitura-530mb-s-gravacao-520mb-s-preto-rm-ssd-240">
+                <img src="ssd.webp" alt="SSD" style="width: 700px; height: 500px;">
+            </a>
+
+            <h3>Fonte</h3>
+
+            <p>Fonte de boa qualidade, dimensionada para os componentes.</p>
+
+
+
+            <a href="https://www.kabum.com.br/produto/461382/fonte-gamer-rise-mode-zeus-500w-pfc-ativo-preto-rm-psu-01-wt-500">
+                <img src="fonte.jpg" alt="Fonte" style="width: 700px; height: 500px;">
+            </a>
+
+            <h3>Gabinete</h3>
+
+            <p>Modelo com ventilação adequada e espaço para futuras atualizações.</p>
+
+
+            <a href="https://www.pichau.com.br/gabinete-office-tgt-b115-mini-tower-preto-tgt-b115-bk">
+                <img src="gabinete.webp" alt="Fonte" style="width: 700px; height: 500px;">
+            </a>
+
+            <h2 style="padding-top: 50px;">2. Computador para o trabalho</h2>
+
+            <p>
+                O PC para trabalho é voltado para atividades como elaboração de documentos, planilhas, 
+                reuniões on-line, atendimento, gerenciamento de sistemas, navegação com várias abas e uso de ferramentas corporativas.
+            </p>
+            
+            <p>Abaixo está as especificações que você deve procurar:</p>
+
+            
+            <div class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Peça:</th>
+                            <th>características:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processador</td>
+                            <td>Intel Core i5,i7 ou AMD Ryzen 5, preferencialmente de geração recente.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Placa mãe</td>
+                            <td>A placa deve ser compatível com o processador, e suportar as novas tecnologia da RAM e SSD</td>
+                        </tr>
+
+                        <tr>
+                            <td>Memória RAM</td>
+                            <td>16 GB para trabalhar com vários programas simultaneamente.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Armazenamento</td>
+                            <td>SSD de 512 GB ou 1 TB, conforme a quantidade de arquivos.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Placa de vídeo (GPU)</td>
+                            <td>Placa de Video dedicada de no mínimo 4 GB</td>
+                        </tr>
+
+                        <tr>
+                            <td>Fonte</td>
+                            <td>Fonte de no mínimo 500W</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gabinete</td>
+                            <td>Modelo com ventilação adequada e espaço para futuras atualizações.</td>
+                        </tr>
+                        
+
+                </table>
+
+            </div>
+
+        <p style="padding: 50px;">Veja as principais ofertas encontradas por nossa equipe:</p>
+
+
+
+        <div class="carrossel">
+
+            <button onclick="avancar('trilha_trabalho')">❯</button>
+
+            <div class="janela">
+
+                <div class="trilha" id="trilha_trabalho">
+
+                        <!-- Adicionando bootstrap(card das propagandas)
+                        Card do processador-->  
+                    
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="processador.jpg" alt="Processador" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">Processador</h4>
+                                <p class="card-text text-white mt-auto">Processador Intel Core i5-12400</p>
+                                <a href="https://www.kabum.com.br/produto/283713/processador-intel-core-i5-12400-2-5ghz-4-4ghz-max-turbo-cache-18mb-6-nucleos-12-threads-lga-1700-com-video-integrado-bx8071512400"
+                                    class="btn btn-primary">
+                                    Ver processador</a>
+                            </div>
+                        </div>
+
+                            <!-- overflow: hiden(evita que o conteúdo transborde para fora da caixa) e 
+                            object-fit: cover(Redimensiona a mídia para cobrir toda a área do contêiner, mantendo a proporção original sem esticar ou esmagar a imagem)
+                            Card placa mãe-->
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="placa mae.jpg" alt="Placa mãe" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">Placa mãe</h4>
+                                <p class="card-text text-white mt-auto">Placa-Mãe MSI PRO</p>
+                                <a href="https://www.kabum.com.br/produto/992997/placa-mae-msi-pro-h610m-b-intel-lga-1700-matx-ddr5-proh610mb"
+                                    class="btn btn-primary">
+                                    Ver placa mãe</a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card Memória RAM-->
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="MemóriaKingstonFury8.webp" alt="Memoria RAM" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">Memória RAM</h4>
+                                <p class="card-text text-white mt-auto">Memória Kingston Fury 8GB</p>
+                                <a href="https://www.kabum.com.br/produto/313833/memoria-kingston-fury-beast-8gb-3200mhz-ddr4-cl16-preto-kf432c16bb-8"
+                                    class="btn btn-primary">
+                                    Ver memória RAM</a>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Card SSD-->
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="SSD_512gb_Alltek.webp" alt="SSD" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">SSD</h4>
+                                <p class="card-text text-white mt-auto">SSD 512GB Alltek</p>
+                                <a href="https://www.kabum.com.br/produto/580065/hd-ssd-512gb-alltek-2-5-sata-ill-6-gbs-3-anos-preto-512gb"
+                                    class="btn btn-primary">
+                                    Ver SSD</a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card placa de video-->
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="PlacaRx550.webp" alt="Placa de video" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">Placa de Vídeo</h4>
+                                <p class="card-text text-white mt-auto">Placa de video Gpu Rx 550 4GB</p>
+                                <a href="https://www.kabum.com.br/produto/538966/placa-de-video-gpu-rx-550-4gb-gddr5-128-bits-projeto-edge-pvex5504gbdf"
+                                    class="btn btn-primary">
+                                    Ver placa de vídeo</a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card Fonte-->
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="FontePcTrabalho.webp" alt="Fonte" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">Fonte</h4>
+                                <p class="card-text text-white mt-auto">Fonte Gamer Zeus 500W</p>
+                                <a href="https://www.kabum.com.br/produto/461382/fonte-gamer-rise-mode-zeus-500w-pfc-ativo-preto-rm-psu-01-wt-500"
+                                    class="btn btn-primary">
+                                    Ver Fonte</a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card gabinete-->
+                        <div class="card" style="height: 500px; overflow: hidden;">
+                            <img class="card-img-top h-100 w-100" src="GabinetePcTrabalho.jpg" alt="Gabinete" style="object-fit: cover;">
+                            <div class="card-img-overlay
+                                d-flex
+                                flex-column
+                                align-items-center">
+                                <h4 class="card-title text-white">Gabinete</h4>
+                                <p class="card-text text-white mt-auto">Gabinete Bluecase BG-054 HIT</p>
+                                <a href="https://www.kabum.com.br/produto/643871/gabinete-gamer-bluecase-bg-054-hit-mid-tower-micro-atx-e-mini-itx-frontal-e-lateral-em-vidro-usb-3-0-sem-fans-preto-bg-054bbx"
+                                    class="btn btn-primary">
+                                    Ver Gabinete</a>
+                            </div>
+                        </div>
+
+
+                        
+
+
+                </div>
+            
+            </div>
+
+
+        </div>
+            
+
+        
+
+
+
+
+
+            
+
+
+
+            <h2 style="padding-top: 50px;">3. Computador para jogos (PC Gamer)</h2>
+
+            <p>
+                O PC gamer é desenvolvido para executar jogos com boa qualidade gráfica, estabilidade e taxas de quadros por
+                segundo (FPS) adequadas. A configuração depende dos jogos, da resolução do monitor e da qualidade gráfica
+                desejada.
+
+            </p>
+
+            <p>Abaixo está as especificações que você deve procurar:</p>
+
+             <div class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Peça:</th>
+                            <th>características:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processador</td>
+                            <td>No mínimo Intel Core i7 ou AMD Ryzen 7 de geração atual</td>
+                        </tr>
+
+                        <tr>
+                            <td>Placa mãe</td>
+                            <td>A placa deve ser compatível com o processador, e suportar as novas tecnologia da RAM e SSD</td>
+                        </tr>
+
+                        <tr>
+                            <td>Memória RAM</td>
+                            <td>32 GB para eliminar travamentos (stuttering) por falta de memória.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Armazenamento</td>
+                            <td>SSD de 1 TB como mínimo recomendado, os 2 TB para manter vários jogos.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Placa de vídeo (GPU)</td>
+                            <td>Placa de Video Dedicada GDDR 6 com 12 GB para Full HD e 16 GB para 4K</td>
+                        </tr>
+
+                        <tr>
+                            <td>Fonte</td>
+                            <td>Fonte de 850W com certificação 80 Plus Gold e padrão ATX 3.1 (ou ATX 3.0).</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gabinete</td>
+                            <td>Modelo com ventilação adequada e espaço para futuras atualizações.</td>
+                        </tr>
+                        
+
+                </table>
+
+            </div>
+
+
+            <p style="padding: 50px;">Veja as principais ofertas encontradas por nossa equipe:</p>
+
+
+            <div class="carrossel">
+
+                <button onclick="avancar('trilha_gamer')">❯</button>
+    
+                <div class="janela">
+    
+                    <div class="trilha" id="trilha_gamer">
+    
+                            <!-- Adicionando bootstrap(card das propagandas)
+                            Card do processador-->  
+                        
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="processador_gamer.webp" alt="Processador" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">Processador</h4>
+                                    <p class="card-text text-white mt-auto">Processador Intel Core i5-12400</p>
+                                    <a href="https://www.pichau.com.br/processador-amd-ryzen-7-9700x-8-core-16-threads-3-8ghz-5-5ghz-turbo-cache-40mb-am5-100-100001404wof?srsltid=AYCX9vIBD7tNQUINkoj7nbtDB1dII4Qd_6k5o9TjCVrqcgmsZZRddDyqEJU"
+                                        class="btn btn-primary">
+                                        Ver processador</a>
+                                </div>
+                            </div>
+    
+                                <!-- overflow: hiden(evita que o conteúdo transborde para fora da caixa) e 
+                                object-fit: cover(Redimensiona a mídia para cobrir toda a área do contêiner, mantendo a proporção original sem esticar ou esmagar a imagem)
+                                Card placa mãe-->
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="PlacaMãeGigabyteB650e.jpg" alt="Placa mãe" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">Placa mãe</h4>
+                                    <p class="card-text text-white mt-auto">Placa Mãe Gigabyte B650e </p>
+                                    <a href="https://www.kabum.com.br/produto/1049915/placa-mae-gigabyte-b650e-eagle-wifi6e-am5-4xddr5-chipset-amd-b650-atx?gclsrc=aw.ds&gad_source=1&gad_campaignid=23709297066&gbraid=0AAAAADx-HyHQAaLdISSfmswVc-rYibxwE&gclid=Cj0KCQiA8OrXBhDEARIsAECtlx6DXaPwX5ynUrJ6bwzGl7A9tQ2hvbyYvpXVNR6KkJkaJP465LoDMAkaAr8pEALw_wcB"
+                                        class="btn btn-primary">
+                                        Ver placa mãe</a>
+                                </div>
+                            </div>
+    
+    
+                            <!-- Card Memória RAM-->
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="Memoria_gamer.webp" alt="Memoria RAM" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">Memória RAM</h4>
+                                    <p class="card-text text-white mt-auto">Memoria Ram Adata XPG(2x16GB)</p>
+                                    <a href="https://netshopinformatica.com.br/produto/memoria-ram-adata-xpg-lancer-ddr5-32gb-2x16gb-6000mhz-branco/"
+                                        class="btn btn-primary">
+                                        Ver memória RAM</a>
+                                </div>
+                            </div>
+    
+    
+    
+                            <!-- Card SSD-->
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="Ssd_gamer.webp" alt="SSD" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">SSD</h4>
+                                    <p class="card-text text-white mt-auto">SSD Interno Samsung NVMe 2 TB</p>
+                                    <a href="https://www.mundodarede.com.br/ssd-interno-samsung-990-evo-plus-2tb-m2-2280-nvme-pcie-4050-7250mbs-mz-v9s2t0bam?utm_source=Site&utm_medium=GoogleMerchant&utm_campaign=GoogleMerchant&srsltid=AYCX9vIOO3wLJpCetUkgqjD6r3OVj9T8-zgvKg93eTpIMxNUCdwtS_4nJKY"
+                                        class="btn btn-primary">
+                                        Ver SSD</a>
+                                </div>
+                            </div>
+    
+    
+                            <!-- Card placa de video-->
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="Placa_gamer.webp" alt="Placa de video" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">Placa de Vídeo</h4>
+                                    <p class="card-text text-white mt-auto">ASRock RX 7800 XT 16GB</p>
+                                    <a href="https://setupbarato.com.br/modelo/placas-de-video/rx7800xt-16gb--cmqufpeat0du6oa10skftmtpb"
+                                        class="btn btn-primary">
+                                        Ver placa de vídeo</a>
+                                </div>
+                            </div>
+    
+    
+                            <!-- Card Fonte-->
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="FonteBeQuiet!.webp" alt="Fonte" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">Fonte</h4>
+                                    <p class="card-text text-white mt-auto">Fonte Be Quiet 850 W</p>
+                                    <a href="https://www.kabum.com.br/produto/910239/fonte-be-quiet-pure-power-12-850w-80-plus-gold-atx-3-1-pcie-5-1-com-cabo-preto-bp004u2?gclsrc=aw.ds&&utm_id=22429436054&gad_source=1&gad_campaignid=22429436054&gbraid=0AAAAADx-HyFWuRywG98r7VA5pbL0HBS1l&gclid=Cj0KCQiA8OrXBhDEARIsAECtlx7g_Zr9FQ_NIG3-2y2XME89607DXpATh4V5PooFSyTJodv2cR_V6M8aAkZTEALw_wcB"
+                                        class="btn btn-primary">
+                                        Ver Fonte</a>
+                                </div>
+                            </div>
+    
+    
+                            <!-- Card gabinete-->
+                            <div class="card" style="height: 500px; overflow: hidden;">
+                                <img class="card-img-top h-100 w-100" src="Gabinete_gamer.webp" alt="Gabinete" style="object-fit: cover;">
+                                <div class="card-img-overlay
+                                    d-flex
+                                    flex-column
+                                    align-items-center">
+                                    <h4 class="card-title text-white">Gabinete</h4>
+                                    <p class="card-text text-white mt-auto">Gabinete Gamer Corsair Frame</p>
+                                    <a href="https://www.pichau.com.br/gabinete-gamer-corsair-frame-4000d-rs-argb-mid-tower-lateral-de-vidro-com-3-fans-branco-cc-9011297-ww?srsltid=AYCX9vLtUOH5yRKHnUGTsJNbfatCuv4-4J0MEUKlq19TbHctE4C0fSu8wgc"
+                                        class="btn btn-primary">
+                                        Ver Gabinete</a>
+                                </div>
+                            </div>
+    
+    
+                            
+    
+    
+                    </div>
+                
+                </div>
+    
+    
+            </div>
+
+        </div>
+
+
+            
+
+
+            
+
+            
+
+            
+            
+
+
+
+        
+
+<!-- rodapé -->
+        
+        <div style="padding-top: 200px;">
+            <hr>
+            <div class="container-lado-a-lado">
+
+                
+                <img src="logo.jpeg" alt="Logo" style="width: 200px; height: 200px;">
+
+                <div style="text-align: justify; font-size: 12px; padding-right: 200px;">
+
+                    <h3>Sobre Nós</h3>
+
+                    <p>A Novatec é uma empresa especializada em oferecer orientações e sugestões de peças e componentes para computadores,
+                        ajudando seus clientes a escolherem os melhores equipamentos de acordo com suas necessidades e possibilidades
+                        financeiras.
+                    </p>
+
+                    <p>
+                        Nosso objetivo é proporcionar uma experiência de compra mais segura, econômica e eficiente, indicando componentes
+                        de qualidade e que sejam compatíveis entre si. Para isso, analisamos cuidadosamente cada peça, como processadores
+                        , placas-mãe, memórias RAM, placas de vídeo, fontes de alimentação, SSDs e gabinetes.
+                    </p>
+
+                    <p>
+                        Na Novatec, entendemos que montar um computador vai muito além de escolher peças individualmente.
+                        É necessário considerar a compatibilidade dos componentes, o desempenho esperado, o custo-benefício
+                        e a possibilidade de futuras atualizações.
+                    </p>
+
+                    <p>
+                        Por isso, oferecemos sugestões personalizadas para diferentes perfis de clientes, seja para quem deseja um
+                        computador para estudos, trabalho, programação, jogos ou atividades profissionais.
+                    </p>
+
+                    <p>
+                        Nosso compromisso é ajudar você a fazer as melhores escolhas, evitando gastos desnecessários e garantindo
+                        que cada componente contribua para o bom funcionamento do computador.
+                    </p>
+
+                    <p>
+                        **Novatec – A tecnologia certa para suas necessidades!
+                    </p>
+                </div>
+
+
+                <div style="margin-right: 100px; text-align: justify;">
+
+                    <h3>Contato</h3>
+
+                    <p>📞 (61)9 9999-2222</p>
+
+                    <p>📧 novatec@gmail.com</p>
+
+                    <p>Seg a Sex da 08:00 ás 17:00</p>
+
+                    
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+       
+
+
+        
+    </main>
+    </div>
+
+
+<!-- Rodapé -->
+    
+<script>
+    function avancar(idTrilha) {
+
+        // Busca a trilha pelo ID recebido
+        const trilha = document.getElementById(idTrilha);
+
+        // Impede cliques durante a animação
+        if (trilha.dataset.animando === "true") {
+            return;
+        }
+
+        trilha.dataset.animando = "true";
+
+        // Pega o primeiro card
+        const primeiroCard = trilha.firstElementChild;
+
+        // Calcula a largura do card + espaço entre eles
+        const larguraCard = primeiroCard.offsetWidth;
+        const gap = 30;
+
+        // Função executada quando a animação termina
+        function finalizar(evento) {
+
+            if (evento.target !== trilha ||
+                evento.propertyName !== "transform") {
+                return;
+            }
+
+            // Move o primeiro card para o final
+            trilha.appendChild(primeiroCard);
+
+            // Volta a trilha para a posição inicial
+            trilha.style.transition = "none";
+            trilha.style.transform = "translateX(0)";
+
+            // Atualiza o navegador
+            trilha.offsetHeight;
+
+            // Restaura a transição definida no CSS
+            trilha.style.transition = "";
+
+            // Libera o próximo clique
+            trilha.dataset.animando = "false";
+
+            trilha.removeEventListener("transitionend", finalizar);
+        }
+
+        // Aguarda o término da animação
+        trilha.addEventListener("transitionend", finalizar);
+
+        // Desloca os cards para a esquerda
+        trilha.style.transform =
+            `translateX(-${larguraCard + gap}px)`;
+    }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
